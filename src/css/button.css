@@ -1,0 +1,30 @@
+.button {
+  background-color: #38CC8B;
+  border-radius: 0.5rem;
+  box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.0908818);
+  padding: 1.5rem 0;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 2.6rem;
+  letter-spacing: 1px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover, .button.focus {
+  background-color: #77E2B3;
+}
+
+.button-margin {
+  margin-top: 1.6rem;
+}
+
+@media screen and (min-width: 1440px) {
+  .button-margin {
+    margin-top: 2rem;
+  }
+}/*# sourceMappingURL=button.css.map */

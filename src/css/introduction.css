@@ -1,0 +1,35 @@
+.introduction {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 6.4rem;
+}
+.introduction__heading {
+  font-weight: 700;
+  font-size: 2.8rem;
+  line-height: 3.6rem;
+  letter-spacing: -0.29px;
+  margin-bottom: 1.6rem;
+}
+.introduction__paragraph {
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 1440px) {
+  .introduction {
+    text-align: left;
+    margin-bottom: 0;
+  }
+  .introduction__heading {
+    font-size: 5rem;
+    line-height: 5.5rem;
+    letter-spacing: -0.52px;
+    margin-bottom: 3.1rem;
+  }
+  .introduction__paragraph {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    font-weight: 500;
+  }
+}/*# sourceMappingURL=introduction.css.map */

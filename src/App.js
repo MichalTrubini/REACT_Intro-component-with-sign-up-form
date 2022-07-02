@@ -1,8 +1,17 @@
+import Form from "./components/Form";
+import Introduction from "./components/Introduction";
+import Offer from "./components/Offer";
+import Page from "./components/UI/Page";
+
 function App() {
   return (
-    <div>
-      <h2>Let's get started!</h2>
-    </div>
+    <Page>
+      <Introduction />
+      <div>
+        <Offer />
+        <Form />
+      </div>
+    </Page>
   );
 }
 

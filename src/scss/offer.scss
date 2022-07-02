@@ -1,0 +1,22 @@
+@import 'variables';
+
+.offer {
+    background-color: $background-card-dark;
+    color: $WhiteColor;
+    text-align: center;
+    border-radius: 1rem;
+    box-shadow: 0px 8px 0px #00000025;
+    padding: 1.8rem 6.6rem;
+    margin-bottom: 2.4rem;
+
+    &__paragraph {
+        font-size: 1.5rem;
+        line-height: 2.6rem;
+        letter-spacing: 0.27px;
+        font-weight: 400;
+    }
+
+    &__paragraph--bold {
+        font-weight: 700;
+    }
+}

@@ -1,0 +1,23 @@
+$RedColor:#FF7979;
+$GreenColor: #38CC8B;
+$PurpleColor:#5E54A4;
+$DarkColor:#3D3B48;
+$WhiteColor:#fff;
+
+//ui
+
+$background-body:$RedColor;
+$background-button:$GreenColor;
+$background-card-dark:$PurpleColor;
+$background-form:$WhiteColor;
+
+$color-light:$WhiteColor;
+$color-dark:$DarkColor;
+
+//mixins
+
+@mixin flexCenter() {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
