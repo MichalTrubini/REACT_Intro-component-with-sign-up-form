@@ -7,11 +7,11 @@
 
 @media screen and (min-width: 1440px) {
   .page {
+    min-height: 100vh;
     max-width: 144rem;
     padding: 12.1rem 16.5rem;
     display: flex;
-    gap: 4.5rem;
     align-items: center;
-    background: url("../images/bg-intro-desktop.png") no-repeat;
+    background: url("../images/bg-intro-desktop.png") no-repeat center;
   }
 }/*# sourceMappingURL=page.css.map */

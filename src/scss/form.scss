@@ -16,12 +16,17 @@
         font-weight: 600;
         font-size: 1.4rem;
         line-height: 2.6rem;
+        outline: none;
+    }
+
+    &__input:focus{
+        border:1px solid #5E54A4;
     }
 
     &__input::-webkit-validation-bubble-message{
         display:none;
     } 
-    
+
     &__TC-message {
         text-align: center;
         margin-top: 0.8rem;
@@ -75,7 +80,6 @@
 
         &__input-container {
             margin-top: 2rem;
-            padding: 1.5rem 0 1.5rem 3.2rem;
         }
 
         &__input-container:first-child {

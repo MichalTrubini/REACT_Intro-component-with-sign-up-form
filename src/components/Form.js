@@ -59,7 +59,7 @@ function Form() {
         }
     ]
 
-    const regex = /^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$/i;
+    const regex = /^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,})$/;
 
     const SubmitHandler = (event) => {
         event.preventDefault();
@@ -69,22 +69,30 @@ function Form() {
         emailInputRef.current.value === '' ? setEmail(true) : setEmail(false);
         passwordInputRef.current.value === '' ? setPassword(true) : setPassword(false);
 
-        regex.test(passwordInputRef.current.value) === false ? setEmailValidity(false) : setEmailValidity(true);
+        regex.test(emailInputRef.current.value) === false ? setEmailValidity(false) : setEmailValidity(true);
+
+        if (nameInputRef.current.value === '' || surnameInputRef.current.value === '' || emailInputRef.current.value === '' || passwordInputRef.current.value === '' || regex.test(emailInputRef.current.value) === false) {return;}
+
+        nameInputRef.current.value = ''; 
+        surnameInputRef.current.value = '';
+        emailInputRef.current.value = '';
+        passwordInputRef.current.value = '';
     }
 
     return ( 
         <form noValidate className="form" onSubmit={SubmitHandler}>
             {inputData.map((inputDataItem) =>
                 <div key={inputDataItem.id} className='form__input-container'>
-                    {inputDataItem.validator && <img className="form__error-icon" src={errorIcon} alt="error icon"/>}
+                    {(inputDataItem.validator) || (inputDataItem.type === 'email' & !emailValidity & !email) ? <img className="form__error-icon" src={errorIcon} alt="error icon"/> : undefined}
+                    
                     <input 
-                        className={(inputDataItem.validator && "form__error form__input") || 'form__input'} 
+                        className={((inputDataItem.validator || (inputDataItem.type === 'email' & !emailValidity & !email)) && "form__error form__input") || 'form__input'} 
                         id={inputDataItem.id}
                         type={inputDataItem.type}
                         placeholder={inputDataItem.placeholder}
                         ref={inputDataItem.ref}
                     />
-                    {(inputDataItem.validator && <p className='form__error-message'>{inputDataItem.error}</p>)}
+                    {(inputDataItem.validator && <p className='form__error-message' aria-live="polite">{inputDataItem.error}</p>)}
                     {(inputDataItem.type === 'email' & !emailValidity & !email) ? <p className='form__error-message'>Looks like this is not an email</p> : undefined}
                 </div>
             )}
